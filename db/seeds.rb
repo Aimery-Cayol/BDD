@@ -26,3 +26,9 @@ require 'faker'
             )
 end 
     
+10.times do 
+    fake = Appointment.create!(
+        patient_id: rand(1..10), 
+        doctor_id: rand(1..10)
+    )
+end 
