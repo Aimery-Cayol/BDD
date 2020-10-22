@@ -11,7 +11,6 @@ require 'faker'
     fake = Doctor.create!(
         first_name: Faker::Name.first_name, 
         last_name: Faker::Name.last_name,
-        specialty: ["neuro", "truc", "ophta"].sample(),
         zip_code: Faker::Address.zip_code,
         city_name: Faker::Address.city
         )
@@ -27,8 +26,8 @@ require 'faker'
 end 
     
 10.times do 
-    fake = Appointment.create!(
-        patient_id: rand(1..10), 
-        doctor_id: rand(1..10)
+    appt = Appointment.create!(
+        patient: Patient.all.sample, 
+        doctor: Doctor.all.sample
     )
 end 
